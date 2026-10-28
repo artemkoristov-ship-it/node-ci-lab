@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Node.js CI Pipeline
 
 on:
   push:
@@ -16,7 +16,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
@@ -30,4 +29,3 @@ jobs:
           name: build-result
           path: |
             dist/
-            # (За потреби змініть шлях, якщо ваш package.json створює папки білду в іншому місці, наприклад build/)
